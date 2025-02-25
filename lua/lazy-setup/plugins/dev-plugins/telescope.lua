@@ -1,10 +1,3 @@
-vim.api.nvim_set_keymap('n', ';f', [[<cmd>Telescope find_files<cr>]], {noremap=true, silent=true})
-vim.api.nvim_set_keymap('n', ';;', [[<cmd>Telescope help_tags<cr>]], {noremap=true, silent=true})
-vim.api.nvim_set_keymap('n', '\\', [[<cmd>Telescope buffers<cr>]], {noremap=true, silent=true})
-vim.api.nvim_set_keymap('n', ';r', [[<cmd>Telescope live_grep<cr>]], {noremap=true, silent=true})
-
-vim.api.nvim_set_keymap('n', ';F', [[<cmd>Telescope file_browser<cr>]], {noremap=true, silent=true})
-
 local fb_actions = require("telescope._extensions.file_browser.actions")
 
 -- You don't need to set any of these options.
@@ -62,9 +55,14 @@ require("telescope").setup {
       hijack_netrw = true,
       mappings = {
         ["i"] = {},
-        ["n"] = {}, 
+        ["n"] = {},
       },
     },
+  },
+  pickers = {
+    find_files = {
+      hidden = true
+    }
   },
 }
 -- To get telescope-file-browser loaded and working with telescope,

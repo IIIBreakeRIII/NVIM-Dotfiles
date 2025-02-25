@@ -45,6 +45,7 @@ return {
 
   },
 
+  -- lspsaga
   {
     'nvimdev/lspsaga.nvim',
     config = function()
@@ -54,7 +55,7 @@ return {
       'nvim-treesitter/nvim-treesitter', -- optional
       'nvim-tree/nvim-web-devicons',     -- optional
     }
-  }
+  },
 
   -- LSP SERVER SETUP --
   -- {
