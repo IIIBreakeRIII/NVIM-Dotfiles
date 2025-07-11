@@ -41,8 +41,14 @@ return {
   -- Treesitter
   {
     'nvim-treesitter/nvim-treesitter',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-
+    dependencies = { 'nvim-tree/nvim-web-devicons', 'windwp/nvim-ts-autotag' },
+    config = function()
+      require('nvim-ts-autotag').setup({
+        aliases = {
+          ["your language here"] = "html",
+        }
+      })
+    end
   },
 
   -- lspsaga
@@ -56,6 +62,17 @@ return {
       'nvim-tree/nvim-web-devicons',     -- optional
     }
   },
+
+  {
+    'kosayoda/nvim-lightbulb',
+    config = function()
+      require("nvim-lightbulb").setup({
+        autocmd = { enabled = true }
+      })
+    end
+  }
+
+
 
   -- LSP SERVER SETUP --
   -- {
