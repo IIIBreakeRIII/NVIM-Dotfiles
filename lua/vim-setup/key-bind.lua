@@ -28,3 +28,4 @@ vim.api.nvim_set_keymap('n', ';g', [[<cmd>Neogit<cr>]], {noremap=true, silent=tr
 vim.api.nvim_set_keymap('n', ';gd', [[<cmd>Neogit diff<cr>]], {noremap=true, silent=true})
 vim.api.nvim_set_keymap('n', ';gl', [[<cmd>Neogit log<cr>]], {noremap=true, silent=true})
 vim.api.nvim_set_keymap('n', ';gc', [[<cmd>Neogit commit<cr>]], {noremap=true, silent=true})
+vim.api.nvim_set_keymap('n', ';gp', [[<cmd>Neogit push<cr>]], {noremap=true, silend=true})
