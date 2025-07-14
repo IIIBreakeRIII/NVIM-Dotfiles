@@ -45,6 +45,7 @@ return {
   },
   
   -- gitsigns.nvim
+  -- neogit.nvim
   -- init.lua
   {
     "lewis6991/gitsigns.nvim",
@@ -54,6 +55,19 @@ return {
         require("gitsigns")
       end, 0)
     end,
+  },
+
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+
+      "nvim-telescope/telescope.nvim",
+      "ibhagwan/fzf-lua",
+      "echasnovski/mini.pick",
+      "folke/snacks.nvim",
+    }
   },
 
   {

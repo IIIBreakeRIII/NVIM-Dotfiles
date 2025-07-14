@@ -22,3 +22,9 @@ vim.api.nvim_set_keymap('n', ';9', [[<cmd>BufferLineGoToBuffer 9<cr>]], {noremap
 
 vim.api.nvim_set_keymap('n', '<A-.>', [[<cmd>BufferLineCycleNext<cr>]], {noremap=true, silent=true})
 vim.api.nvim_set_keymap('n', '<A-,>', [[<cmd>BufferLineCyclePrev<cr>]], {noremap=true, silent=true})
+
+-- neogit key binding
+vim.api.nvim_set_keymap('n', ';g', [[<cmd>Neogit<cr>]], {noremap=true, silent=true})
+vim.api.nvim_set_keymap('n', ';gd', [[<cmd>Neogit diff<cr>]], {noremap=true, silent=true})
+vim.api.nvim_set_keymap('n', ';gl', [[<cmd>Neogit log<cr>]], {noremap=true, silent=true})
+vim.api.nvim_set_keymap('n', ';gc', [[<cmd>Neogit commit<cr>]], {noremap=true, silent=true})
