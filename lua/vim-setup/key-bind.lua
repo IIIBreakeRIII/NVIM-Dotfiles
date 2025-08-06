@@ -1,5 +1,37 @@
 -- This Space is for Key-Binding
 
+-- personal use
+-- yank to clipboard
+local function copy_to_pbcopy()
+  local save_reg   = vim.fn.getreg('"')
+  local save_type  = vim.fn.getregtype('"')
+  vim.cmd('normal! "zy')
+  vim.fn.system('pbcopy', vim.fn.getreg('z'))
+  vim.fn.setreg('"', save_reg, save_type)
+end
+
+-- clangd : hover + man page fallback
+vim.keymap.set('n', 'K', function()
+  local word = vim.fn.expand('<cword>')
+  -- LSP hover 시도
+  vim.lsp.buf.hover()
+  -- man page 열기 (비동기로)
+  vim.defer_fn(function()
+    vim.cmd('silent! Man ' .. word)
+  end, 100)
+end, { desc = "LSP Hover + Man page fallback" })
+
+-- cland : DevdocsOpen
+vim.keymap.set('n', '<leader>d', function()
+  local word = vim.fn.expand('<cword>')
+  local ok = pcall(vim.cmd, 'DevdocsOpenFloat ' .. word)
+  if not ok then
+    vim.cmd('Man ' .. word)
+  end
+end, { desc = "DevDocs Float or Man page" })
+
+-- visual 모드에서 ;cp 누르면 위 함수 실행
+vim.keymap.set('v', ';cp', copy_to_pbcopy, { noremap = true, silent = true })
 -- telescope
 vim.api.nvim_set_keymap('n', ';f', [[<cmd>Telescope find_files<cr>]], {noremap=true, silent=true})
 vim.api.nvim_set_keymap('n', ';;', [[<cmd>Telescope help_tags<cr>]], {noremap=true, silent=true})

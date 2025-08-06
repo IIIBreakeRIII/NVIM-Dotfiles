@@ -11,7 +11,10 @@ require("lspconfig").lua_ls.setup({
   }
 })
 
-require("lspconfig")['clangd'].setup({})
+require("lspconfig")['clangd'].setup({
+  cmd = { "clangd", "--background-index", "--clang-tidy" },
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+})
 require("lspconfig")['html'].setup({
   cmd = { "vscode-html-language-server", "--stdio" },
 })

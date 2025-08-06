@@ -70,7 +70,18 @@ return {
         autocmd = { enabled = true }
       })
     end
-  }
+  },
+
+  {
+    "luckasRanarison/nvim-devdocs",
+    cmd = { "DevdocsOpen", "DevdocsInstall", "DevdocsUpdate" },
+    config = function()
+      require("nvim-devdocs").setup {
+        ensure_installed = { "c", "cpp" }, -- DevDocs에서 C, C++ 문서 설치
+        wrap = true,
+      }
+    end
+  },
 
 
 
