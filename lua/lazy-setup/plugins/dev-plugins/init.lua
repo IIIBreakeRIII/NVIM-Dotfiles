@@ -105,6 +105,10 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
+  },
+
+  {
+    require("lazy-setup.plugins.dev-plugins.ReCursion.lib").setup()
   }
 
 }
