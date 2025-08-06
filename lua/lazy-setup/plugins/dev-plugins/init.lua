@@ -108,7 +108,9 @@ return {
   },
 
   {
-    require("lazy-setup.plugins.dev-plugins.ReCursion.lib").setup()
+    'IIIBreakeRIII/Recursion.nvim',
+    config = function()
+      require("ReCursion").setup()
+    end
   }
-
 }
