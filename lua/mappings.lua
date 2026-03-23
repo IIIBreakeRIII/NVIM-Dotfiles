@@ -88,3 +88,10 @@ end, { noremap = true, silent = true })
 
 -- command palette / search
 map("n", ";?", "<cmd>Legendary<cr>", { noremap = true, silent = true })
+
+-- vim-tmux-navigator: override NvChad window maps
+map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { noremap = true, silent = true })
+map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { noremap = true, silent = true })
+map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { noremap = true, silent = true })
+map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { noremap = true, silent = true })
+map("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>", { noremap = true, silent = true })

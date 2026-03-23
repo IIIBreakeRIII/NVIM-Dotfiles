@@ -16,7 +16,13 @@ return {
   -- Imported plugins
   { "MeanderingProgrammer/render-markdown.nvim", ft = { "markdown" } },
   { "nvim-telescope/telescope-file-browser.nvim" },
-  { "christoomey/vim-tmux-navigator" },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+    init = function()
+      vim.g.tmux_navigator_no_mappings = 1
+    end,
+  },
   { "NeogitOrg/neogit" },
   { "sindrets/diffview.nvim" },
   { "luckasRanarison/nvim-devdocs" },
