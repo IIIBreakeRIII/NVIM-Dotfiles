@@ -23,7 +23,15 @@ return {
       vim.g.tmux_navigator_no_mappings = 1
     end,
   },
-  { "NeogitOrg/neogit" },
+  {
+    "NeogitOrg/neogit",
+    cmd = "Neogit",
+    opts = {},
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+    },
+  },
   { "sindrets/diffview.nvim" },
   { "luckasRanarison/nvim-devdocs" },
   {
