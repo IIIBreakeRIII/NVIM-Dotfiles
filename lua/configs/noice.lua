@@ -1,4 +1,15 @@
 return {
+  lsp = {
+    signature = {
+      auto_open = {
+        enabled = false,
+      },
+      opts = {
+        enter = false,
+        focusable = false,
+      },
+    },
+  },
   cmdline = {
     enabled = true,
     view = "cmdline_popup",

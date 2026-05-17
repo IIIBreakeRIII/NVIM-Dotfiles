@@ -8,6 +8,19 @@ return {
   -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      {
+        "williamboman/mason.nvim",
+        opts = {},
+      },
+      {
+        "williamboman/mason-lspconfig.nvim",
+        opts = {
+          ensure_installed = { "html", "cssls", "pyright" },
+          automatic_enable = true,
+        },
+      },
+    },
     config = function()
       require "configs.lspconfig"
     end,
@@ -71,7 +84,6 @@ return {
     event = "VeryLazy",
     opts = {},
   },
-
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 

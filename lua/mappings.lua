@@ -28,7 +28,7 @@ map("n", "K", function()
 end, { desc = "LSP Hover + Man page fallback" })
 
 -- DevdocsOpen
-map("n", "<leader>d", function()
+map("n", ";d", function()
   local word = vim.fn.expand "<cword>"
   local ok = pcall(vim.cmd, "DevdocsOpenFloat " .. word)
   if not ok then
